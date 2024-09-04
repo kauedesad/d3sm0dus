@@ -76,6 +76,7 @@ body {
 .bat-right {
     right: 0;
     animation: flyRight 10s linear infinite;
+    filter: drop-shadow(0 0 10px rgba(0, 255, 0, 0.7));
 }
 
 @keyframes flyLeft {
