@@ -1,0 +1,98 @@
+@font-face {
+    font-family: 'HVD Rowdy';
+    src: url('src/font/HVD_Rowdy.otf') format('woff2');
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #6a966d;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+}
+
+.background-image {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 35%;
+    height: auto;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: 1;
+    object-fit: cover;
+    filter: drop-shadow(0 0 10px rgba(0, 255, 0, 0.7));
+}
+
+.text-overlay {
+    position: absolute;
+    font-family: 'HVD Rowdy', sans-serif;
+    color: #000000; 
+    text-shadow: 0 0 5px #00FF00, 0 0 10px #00FF00, 0 0 20px #00FF00;
+    z-index: 2;
+}
+
+.text-top {
+    top: 10%;
+    left: 50%;
+    transform: translateX(-50%) rotate(-5deg);
+    font-size: 5.5vw;
+}
+
+.text-middle {
+    top: 25%;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 4vw;
+}
+
+.text-bottom {
+    top: 75%;
+    left: 50%;
+    transform: translateX(-50%) rotate(5deg);
+    font-size: 8vw;
+}
+
+.bat-left, .bat-right {
+    position: absolute;
+    top: 30%;
+    width: 15%;
+    height: auto;
+    z-index: 2;
+}
+
+.bat-left {
+    left: 0;
+    animation: flyLeft 10s linear infinite;
+    filter: drop-shadow(0 0 10px rgba(0, 255, 0, 0.7));
+}
+
+.bat-right {
+    right: 0;
+    animation: flyRight 10s linear infinite;
+}
+
+@keyframes flyLeft {
+    from { left: 0; }
+    to { left: 100%; }
+}
+
+@keyframes flyRight {
+    from { right: 0; }
+    to { right: 100%; }
+}
+
+canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
